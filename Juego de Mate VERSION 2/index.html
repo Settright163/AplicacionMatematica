@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación Matemática</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Aplicación Matemática</h1>
+        
+        <!-- Menú principal -->
+        <div class="main-menu" id="main-menu">
+            <h2>Selecciona una opción</h2>
+            <div class="main-menu-buttons">
+                <button class="btn-primary" id="game-option">Juego Matemático</button>
+                <button class="btn-secondary" id="matrix-option">Calculadora de Matrices</button>
+            </div>
+        </div>
+        
+        <!-- Menú del juego -->
+        <div class="menu" id="menu">
+            <h2>Selecciona un nivel de dificultad</h2>
+            <div class="level-buttons">
+                <button class="btn-primary" id="easy">Fácil</button>
+                <button class="btn-secondary" id="medium">Medio</button>
+                <button class="btn-warning" id="hard">Difícil</button>
+            </div>
+            <button class="btn-back" id="back-to-main">Volver al menú</button>
+        </div>
+        
+        <!-- Juego matemático -->
+        <div class="game" id="game">
+            <div class="stats">
+                <div class="level-indicator" id="level-display">Nivel: Fácil</div>
+                <div class="score" id="score-display">Puntos: 0</div>
+                <div class="timer" id="timer-display">Tiempo: 30s</div>
+            </div>
+            
+            <div class="problem" id="problem"></div>
+            
+            <input type="text" id="answer" placeholder="Tu respuesta">
+            <button class="btn-primary" id="submit">Verificar</button>
+            
+            <div class="feedback" id="feedback"></div>
+            
+            <button class="btn-danger" id="quit">Salir</button>
+        </div>
+        
+        <!-- Game over screen -->
+        <div class="game-over" id="game-over">
+            <h2>¡Juego Terminado!</h2>
+            <p>Tu puntuación final es: <span id="final-score">0</span></p>
+            <button class="btn-primary" id="play-again">Jugar de nuevo</button>
+        </div>
+        
+        <!-- Calculadora de matrices -->
+        <div class="matrix-calculator" id="matrix-calculator">
+            <h2>Calculadora de Matrices 3x3</h2>
+            
+            <div class="matrices-container">
+                <div class="matrix-input-container">
+                    <h3>Matriz A</h3>
+                    <div class="matrix-grid" id="matrix-a">
+                        <input type="number" class="matrix-cell" id="a-0-0" value="1">
+                        <input type="number" class="matrix-cell" id="a-0-1" value="0">
+                        <input type="number" class="matrix-cell" id="a-0-2" value="0">
+                        <input type="number" class="matrix-cell" id="a-1-0" value="0">
+                        <input type="number" class="matrix-cell" id="a-1-1" value="1">
+                        <input type="number" class="matrix-cell" id="a-1-2" value="0">
+                        <input type="number" class="matrix-cell" id="a-2-0" value="0">
+                        <input type="number" class="matrix-cell" id="a-2-1" value="0">
+                        <input type="number" class="matrix-cell" id="a-2-2" value="1">
+                    </div>
+                </div>
+                
+                <div class="matrix-input-container">
+                    <h3>Matriz B</h3>
+                    <div class="matrix-grid" id="matrix-b">
+                        <input type="number" class="matrix-cell" id="b-0-0" value="1">
+                        <input type="number" class="matrix-cell" id="b-0-1" value="0">
+                        <input type="number" class="matrix-cell" id="b-0-2" value="0">
+                        <input type="number" class="matrix-cell" id="b-1-0" value="0">
+                        <input type="number" class="matrix-cell" id="b-1-1" value="1">
+                        <input type="number" class="matrix-cell" id="b-1-2" value="0">
+                        <input type="number" class="matrix-cell" id="b-2-0" value="0">
+                        <input type="number" class="matrix-cell" id="b-2-1" value="0">
+                        <input type="number" class="matrix-cell" id="b-2-2" value="1">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="matrix-operations">
+                <button class="btn-operation" id="add-matrices">Sumar A+B</button>
+                <button class="btn-operation" id="subtract-matrices">Restar A-B</button>
+                <button class="btn-operation" id="multiply-matrices">Multiplicar A×B</button>
+                <button class="btn-operation" id="inverse-matrix-a">Inversa de A</button>
+                <button class="btn-operation" id="inverse-matrix-b">Inversa de B</button>
+            </div>
+            
+            <div class="result-container">
+                <h3>Resultado</h3>
+                <div class="matrix-grid result-grid" id="result-matrix">
+                    <div class="result-cell" id="result-0-0">0</div>
+                    <div class="result-cell" id="result-0-1">0</div>
+                    <div class="result-cell" id="result-0-2">0</div>
+                    <div class="result-cell" id="result-1-0">0</div>
+                    <div class="result-cell" id="result-1-1">0</div>
+                    <div class="result-cell" id="result-1-2">0</div>
+                    <div class="result-cell" id="result-2-0">0</div>
+                    <div class="result-cell" id="result-2-1">0</div>
+                    <div class="result-cell" id="result-2-2">0</div>
+                </div>
+            </div>
+            
+            <div class="matrix-message" id="matrix-message"></div>
+            
+            <button class="btn-back" id="back-from-calculator">Volver al menú</button>
+        </div>
+    </div>
+    
+    <script src="logica.js"></script>
+</body>
+</html>
